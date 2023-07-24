@@ -129,7 +129,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_HOST_USER='kavalivanitheswari@gmail.com'
-EMAIL_HOST_PASSWORD='xakilhqpywwoijzi'
+EMAIL_HOST_PASSWORD='upxirqjmdeybarfn'
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 EMAIL_PORT=587
