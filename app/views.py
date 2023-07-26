@@ -27,10 +27,10 @@ def registration(request):
             NSPO.save()
 
             send_mail('Registration',
-                    'Ur Registration is Successfull',
-                      'kavalivanitheswari@gmail.com',
-                      [NSUFO.email],
-                      fail_silently=False
+                     'Ur Registration is Successfull',
+                     'kavalivanitheswari@gmail.com',
+                     [NSUFO.email],
+                     fail_silently=False
                           )
 
 
@@ -94,3 +94,17 @@ def change_password(request):
         return HttpResponse('Password change Successfully')
 
     return render(request,'change_password.html')
+
+def reset_password(request):
+    if request.method=='POST':
+        un=request.POST['username']
+        pw=request.POST['pw']
+        LUO=User.objects.filter(username=un)
+        if LUO:
+            UO=LUO[0]
+            UO.set_password(pw)
+            UO.save()
+            return HttpResponse('Reset password done successfully')
+        else:
+            return HttpResponse('username is invalid')
+    return render(request,'reset_password.html')
